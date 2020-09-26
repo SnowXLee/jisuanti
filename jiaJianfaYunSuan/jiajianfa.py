@@ -10,8 +10,8 @@ def random_int_list(start, stop, length):
     random_list.append(random.randint(start, stop))
   return random_list
 
-#两位数加法运算题——两位数加法
-def lwsjf(n):
+#两位数加法运算题——两位数加法two add two
+def twATw(n):
   #参数n为题数
   dsL = []  #得数列表
   ystL = []  #运算题列表11+12
@@ -26,8 +26,8 @@ def lwsjf(n):
   tk.append(dsL)
   return tk
 
-#三位数加法运算题——三位数加法
-def swsjf(n):
+#三位数加法运算题——three add three
+def thATh(n):
   #参数n为题数
   dsL = []  #得数列表
   ystL = []  #运算题列表11+12
@@ -42,8 +42,8 @@ def swsjf(n):
   tk.append(dsL)
   return tk
 
-#四位数加法运算题——四位数加法
-def swsjf_(n):
+#四位数加法运算题——four add four
+def foAFo(n):
   #参数n为题数
   dsL = []  #得数列表
   ystL = []  #运算题列表11+12
@@ -58,8 +58,8 @@ def swsjf_(n):
   tk.append(dsL)
   return tk
 
-#两位数减一位数运算题——两减一减法
-def ljyjf(n):
+#两位数减一位数运算题——two sub one
+def twSOn(n):
   #参数n为题数
   dsL = []  #得数列表
   ystL = []  #运算题列表11-12
@@ -74,8 +74,8 @@ def ljyjf(n):
   tk.append(dsL)
   return tk
 
-#两位数减法运算题——两减两减法
-def ljljf(n):
+#两位数减法运算题——two sub two
+def twSTw(n):
   #参数n为题数
   dsL = []  #得数列表
   ystL = []  #运算题列表11-12
@@ -94,8 +94,8 @@ def ljljf(n):
   tk.append(dsL)
   return tk
 
-#三位数减两位数运算题——三减两减法
-def sjljf(n):
+#三位数减两位数运算题——three sub two
+def thSTw(n):
   #参数n为题数
   dsL = []  #得数列表
   ystL = []  #运算题列表11-12
@@ -110,8 +110,8 @@ def sjljf(n):
   tk.append(dsL)
   return tk
 
-#三位数减三位数运算题——三减三减法
-def sjsjf(n):
+#三位数减三位数运算题——three sub three
+def thSTh(n):
   #参数n为题数
   dsL = []  #得数列表
   ystL = []  #运算题列表11-12
@@ -130,8 +130,8 @@ def sjsjf(n):
   tk.append(dsL)
   return tk
 
-#四位数减三位数减法——四减三减法
-def fjsjf(n):
+#四位数减三位数减法——four sub three
+def foSTh(n):
   #参数n为题数
   dsL = []  #得数列表
   ystL = []  #运算题列表11-12
@@ -150,8 +150,8 @@ def fjsjf(n):
   tk.append(dsL)
   return tk
 
-#四位数减四位数减法——四减四减法
-def fjfjf(n):
+#四位数减四位数减法——four sub four
+def foSFo(n):
   #参数n为题数
   dsL = []  #得数列表
   ystL = []  #运算题列表11-12
@@ -191,7 +191,7 @@ def pb(tb):
 
 #打印
 def dy(tb):
-  #参数依然是题本类似这种 abc = ljljf(4) + sjljf(4) + fjfjf(4)
+  #参数依然是题本类似这种 abc = foafo(4) + thath(4) + twstw(4)
   pbL = pb(tb)  #排版列表经过排版后的题本二元列表
   jstTbL = pbL[0]  #从排列后的题本列表中分割出计算题的部分
   dsTbL = pbL[1]  #从排列后的题本列表中分割出得数的部分
@@ -220,17 +220,22 @@ def dy(tb):
   fTb.close()
   fDs.close()
 
+#两位数加两位数44题  twATw(44)  #三位数加两位数44题  thATw(44)  
+#三位数加三位数44题  thATh(44)  #四位数加三位数44题  foATh(44)
+#四位数加四位数44题  foAFo(44)  
+#两位数加两位数加三位数36题  
+
+#两位数减两位数44题  twSTw(44)  #三位数减两位数44题  thSTw(44)
+#三位数减三位数44题  thSTh(44)  #四位数减三位数44题  foSTh(44)
+#四位数减四位数44题  foSFo(44)
+
+
 
 #启动
-abc = ljljf(4) + sjljf(4) + fjfjf(4)
+abc = twATw(44)
 dy(abc)
 
 
-
-
-
-
-
 #题库种类
-#加法：两位数加法运算题——lwsjf(n)、三位数加法运算题——swsjf(n)、四位数加法运算题——fjfjf(n)
-#减法：两减一减法ljyjf(n)、两减两减法ljljf(n)、三减两减法sjljf(n)、三减三减法sjsjf(n)、四减三减法fjsjf(n)、四减四减法fjfjf(n)
+#加法：两位数加法运算题——twatw(n)、三位数加法运算题——thath(n)、四位数加法运算题——foafo(n)
+#减法：两减一减法twson(n)、两减两减法twstw(n)、三减两减法thstw(n)、三减三减法thsth(n)、四减三减法fosth(n)、四减四减法fosfo(n)
