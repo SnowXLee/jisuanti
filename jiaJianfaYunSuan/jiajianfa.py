@@ -202,13 +202,19 @@ def dy(tb):
   jstTbL[0] = jstTbL0
   dsTbL0 = "  " + dsTbL[0]
   dsTbL[0] = dsTbL0
+  jstTbL1 = []
+  dsTbL1 = []
+  i = 0
   for ts in range(len(jstTbL)):
     #ts题数tb中下标0的长度
-    if (ts + 1) % 4 == 0:
-      jstTbL.insert(ts + 1, "\n\n")
-      dsTbL.insert(ts + 1, "\n\n")
-  outputTb = "  ".join(jstTbL)
-  outputDs = "  ".join(dsTbL)
+    jstTbL1.append(jstTbL[ts])
+    dsTbL1.append(dsTbL[ts])
+    if (len(jstTbL1) == (4 + 5 * i)):
+      jstTbL1.append("\n\n")
+      dsTbL1.append("\n\n")
+      i = i + 1
+  outputTb = "  ".join(jstTbL1)
+  outputDs = "  ".join(dsTbL1)
   #获取时间并将其作为文件名
   localtime = time.localtime(time.time())
   nyrhm = str(localtime.tm_year) + "年" + str(localtime.tm_mon) + "月" + str(localtime.tm_mday) + "日" + str(localtime.tm_hour) + "时" + str(localtime.tm_min) + "分"
@@ -232,7 +238,7 @@ def dy(tb):
 
 
 #启动
-abc = twATw(44)
+abc = twSTw(44)
 dy(abc)
 
 
