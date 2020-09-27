@@ -57,8 +57,8 @@ def dy(tb):
   #获取时间并将其作为文件名
   localtime = time.localtime(time.time())
   nyrhm = str(localtime.tm_year) + "年" + str(localtime.tm_mon) + "月" + str(localtime.tm_mday) + "日" + str(localtime.tm_hour) + "时" + str(localtime.tm_min) + "分"
-  fTb = open("./mulExercise/" + nyrhm + "题" + ".txt", "w")
-  fDs = open("./mulExercise/" + nyrhm + "得数" + ".txt", "w")
+  fTb = open("./mulExercise/" + nyrhm + "题" + ".txt", "w", encoding= 'utf-8')
+  fDs = open("./mulExercise/" + nyrhm + "得数" + ".txt", "w", encoding= 'utf-8')
   fTb.write(outputTb)
   fDs.write(outputDs)
   # 关闭打开的文件，必须关闭不然电脑能炸裂
