@@ -267,22 +267,63 @@ def dy(tb):
   fTb.close()
   fDs.close()
 
+#启动函数，按提示输入相应选项即可导出相应类型的题目以及所需题数
+def qidong():
+  print("1：两位数加两位数、2：三位数加两位数、3：三位数加三位数、4：四位数加三位数、5：四位数加四位数\n")
+  print("17：两位数减一位数、18：两位数减两位数、19：三位数减两位数、20：三位数减三位数、21：四位数减三位数、22：四位数减四位数\n")
+  print("33：两位数乘两位数、34：十同个补乘法、35：个同十补乘法、36：十位相同乘法\n")
+  tx = int(input("输入你需要的题型:"))  #题型
+  ts = int(input("该题型所需题数:"))  #题数
+  #1~16是加法，17~32是减法，33~48是乘法，49~64是除法
+  if tx == 1:
+    dy(twATw(ts))  #两位数加两位数
+  elif tx == 2:
+    dy(thATw(ts))  #三位数加两位数
+  elif tx == 3:
+    dy(thATh(ts))  #三位数加三位数
+  elif tx == 4:
+    dy(foATh(ts))  #四位数加三位数
+  elif tx == 5:
+    dy(foAFo(ts))  #四位数加四位数
+  elif (6 <= tx) and (tx <= 16):
+    print("暂无该加法的函数，待添加")
+  elif tx == 17:
+    dy(twSOn(ts))  #两位数减一位数
+  elif tx == 18:
+    dy(twSTw(ts))  #两位数减两位数
+  elif tx == 19:
+    dy(thSTw(ts))  #三位数减两位数
+  elif tx == 20:
+    dy(thSTh(ts))  #三位数减三位数
+  elif tx == 21:
+    dy(foSTh(ts))  #四位数减三位数
+  elif tx == 22:
+    dy(foSFo(ts))  #四位数减四位数
+  elif (24 <= tx) and (tx <= 32):
+    print("暂无该减法函数，待添加")
+  elif tx == 33:
+    dy(twMTw(ts))  #两位数乘两位数
+  elif tx == 34:
+    dy(stgb(ts))   #十同个补乘法
+  elif tx == 35:
+    dy(gtsb(ts))   #个同十补乘法
+  elif tx == 36:
+    dy(swxt(ts))   #十位相同乘法
+  elif (37 <= tx) and (tx <= 48):
+    print("暂无该乘法函数，待添加")
+  
+
+#启动
+qidong()
+
 #两位数加两位数44题  twATw(44)  #三位数加两位数44题  thATw(44)  
 #三位数加三位数44题  thATh(44)  #四位数加三位数44题  foATh(44)
 #四位数加四位数44题  foAFo(44)  
 #两位数加两位数加三位数36题
 
-#两位数减一位数44题  onSTw(44)  #两位数减两位数44题  twSTw(44)
+#两位数减一位数44题  twSOn(44)  #两位数减两位数44题  twSTw(44)
 #三位数减两位数44题  thSTw(44)  #三位数减三位数44题  thSTh(44)
 #四位数减三位数44题  foSTh(44)  #四位数减四位数44题  foSFo(44)
 
 
 
-#启动
-abc =  foATh(44)
-dy(abc)
-
-
-#题库种类
-#加法：两位数加法运算题——twatw(n)、三位数加法运算题——thath(n)、四位数加法运算题——foafo(n)
-#减法：两减一减法twson(n)、两减两减法twstw(n)、三减两减法thstw(n)、三减三减法thsth(n)、四减三减法fosth(n)、四减四减法fosfo(n)
