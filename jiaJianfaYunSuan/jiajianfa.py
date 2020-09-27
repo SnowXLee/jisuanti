@@ -106,7 +106,7 @@ def twSOn(n):
   ystL = []  #运算题列表11-12
   tk = []  #题库列表输出列表，下标1得数列表ds；下标0为题；
   bjsL = random_int_list(10, 99, n)  #被减数的两位数列表
-  jsL = random_int_list(0, 9, n)  #减数的一位数列表
+  jsL = random_int_list(1, 9, n)  #减数的一位数列表
   #获得题与答案
   for i in range(n):
     dsL.append(str(bjsL[i] - jsL[i]))
