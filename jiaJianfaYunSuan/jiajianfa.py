@@ -16,8 +16,8 @@ def twATw(n):
   dsL = []  #得数列表
   ystL = []  #运算题列表11+12
   tk = []  #题库列表输出列表，下标1得数列表ds；下标0为题；
-  bjsL = random_int_list(10, 99, n)  #被加数的两位数列表
-  jsL = random_int_list(10, 99, n)  #加数的两位数列表
+  bjsL = random_int_list(11, 99, n)  #被加数的两位数列表
+  jsL = random_int_list(11, 99, n)  #加数的两位数列表
   #获得题与答案
   for i in range(n):
     dsL.append(str(bjsL[i] + jsL[i]))
@@ -33,7 +33,7 @@ def thATw(n):
   ystL = []  #运算题列表11+12
   tk = []  #题库列表输出列表，下标0得数列表ds；下标1为题；
   bjsL = random_int_list(100, 999, n)  #被加数的三位数列表
-  jsL = random_int_list(10, 99, n)  #加数的两位数列表
+  jsL = random_int_list(11, 99, n)  #加数的两位数列表
   #获得题与答案
   for i in range(n):
     #随机数等于0更高位数的在“+”前面，随机数等于1更高位数的在“+”后面
@@ -105,7 +105,7 @@ def twSOn(n):
   dsL = []  #得数列表
   ystL = []  #运算题列表11-12
   tk = []  #题库列表输出列表，下标1得数列表ds；下标0为题；
-  bjsL = random_int_list(10, 99, n)  #被减数的两位数列表
+  bjsL = random_int_list(11, 99, n)  #被减数的两位数列表
   jsL = random_int_list(1, 9, n)  #减数的一位数列表
   #获得题与答案
   for i in range(n):
@@ -121,8 +121,8 @@ def twSTw(n):
   dsL = []  #得数列表
   ystL = []  #运算题列表11-12
   tk = []  #题库列表输出列表，下标1得数列表ds；下标0为题；
-  bjsL = random_int_list(10, 99, n)  #被减数的两位数列表
-  jsL = random_int_list(10, 99, n)  #减数的两位数列表
+  bjsL = random_int_list(11, 99, n)  #被减数的两位数列表
+  jsL = random_int_list(11, 99, n)  #减数的两位数列表
   #获得题与答案
   for i in range(n):
     if bjsL[i] > jsL[i]:
@@ -142,7 +142,7 @@ def thSTw(n):
   ystL = []  #运算题列表11-12
   tk = []  #题库列表输出列表，下标1得数列表ds；下标0为题；
   bjsL = random_int_list(100, 999, n)  #被减数的三位数列表
-  jsL = random_int_list(10, 99, n)  #减数的两位数列表
+  jsL = random_int_list(11, 99, n)  #减数的两位数列表
   #获得题与答案
   for i in range(n):
     dsL.append(str(bjsL[i] - jsL[i]))
