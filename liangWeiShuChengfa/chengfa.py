@@ -132,6 +132,28 @@ def swxt(n):
   tk.append(dsL)
   return tk
 
+#一个数收尾相同与另一个首尾互补的两位数相乘——首尾同首尾补
+def swtSwb(n):
+  #参数n为题数也就是乘数与被乘数的个数
+  dsL = []  #得数列表
+  ystL = []  #运算题列表11*12
+  tk = []  #题库列表输出列表，下标1得数列表ds；下标0为题；
+  gwsL = random_int_list(1, 9, n)  #个位数——生成一个存储个位数数字的一个长度n的列表
+  swsL = random_int_list(1, 9, n)  #十位数——生成一个存储十位数数字的一个长度n的列表
+  
+  #获得首尾同首尾补的乘数与被乘数的题的列表；以及获得得数列表
+  #首尾相同的两位数用个位数列表gwsL的数，首尾互补的两位数用十位数列表swsL的数
+  for i in range(n):
+    #随机数等于0首尾同的数在“×”前面，随机数等于1首尾补的数在“×”后面
+    if random.randint(0, 1) == 0:
+      ystL.append(str(swsL[i] * 10 + swsL[i]) + '×' + str((10 - gwsL[i]) * 10 + gwsL[i]))
+    else:
+      ystL.append(str((10 - gwsL[i]) * 10 + gwsL[i]) + '×' + str(swsL[i] * 10 + swsL[i]))
+    dsL.append(str((swsL[i] * 10 + swsL[i]) * ((10 - gwsL[i]) * 10 + gwsL[i])))
+  tk.append(ystL)
+  tk.append(dsL)
+  return tk
+
 #启动函数，按提示输入相应选项即可导出相应类型的题目以及所需题数
 def qidong():
   print("1：两位数加两位数、2：三位数加两位数、3：三位数加三位数、4：四位数加三位数、5：四位数加四位数\n")
@@ -178,8 +200,9 @@ def qidong():
     print("暂无该乘法函数，待添加")
 
 #启动
-qidong()
+# qidong()
 
+dy(swtSwb(44))
 
 #两位数乘两位数44题  twMTw(44)  #十位相同个位互补的两位数相乘44题  stgb(44)
 #个位相同十位互补的两位数相乘44题  gtsb(44)  #十位相同的两位数相乘44题  swxt(44)
