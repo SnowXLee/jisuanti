@@ -154,13 +154,121 @@ def swtSwb(n):
   tk.append(dsL)
   return tk
 
+#尾数为1的两位数相乘——尾1两位数乘
+def w1LwMul(n):
+  #参数n为题数也就是乘数与被乘数的个数
+  dsL = []  #得数列表
+  ystL = []  #运算题列表11*12
+  tk = []  #题库列表输出列表，下标1得数列表ds；下标0为题；
+  gwsL = random_int_list(1, 9, n)  #个位数——生成一个存储尾数为1的两位数的十位数字的一个长度n的列表
+  swsL = random_int_list(10, 99, n)  #十位数——生成一个存储两位数数字的一个长度n的列表
+  
+  #获得尾数为1的两位数列表以及另一个两位数列表；以及获得得数列表
+  #
+  for i in range(n):
+    #随机数等于0首尾同的数在“×”前面，随机数等于1首尾补的数在“×”后面
+    if random.randint(0, 1) == 0:
+      ystL.append(str(swsL[i]) + '×' + str(gwsL[i] * 10 + 1))
+    else:
+      ystL.append(str(gwsL[i] * 10 + 1) + '×' + str(swsL[i]))
+    dsL.append(str((gwsL[i] * 10 + 1) * (swsL[i])))
+  tk.append(ystL)
+  tk.append(dsL)
+  return tk
+
+#接近100的数字相乘——接近100相乘
+def jj100Mul(n):
+  print("思考何为接近100的数，什么范围的数更适合这个方法")
+  #参数n为题数也就是乘数与被乘数的个数
+  dsL = []  #得数列表
+  ystL = []  #运算题列表11*12
+  tk = []  #题库列表输出列表，下标1得数列表ds；下标0为题；
+  gwsL = random_int_list(80, 120, n)  #被乘数列表——生成一个存储80~120范围内的一个长度n的列表
+  swsL = random_int_list(80, 120, n)  #乘数列表——生成一个存储80~120范围内的一个长度n的列表
+  
+  #获得两个接近接近100的数相乘的列表；以及获得得数列表
+  for i in range(n):
+    ystL.append(str(gwsL[i]) + '×' + str(swsL[i]))
+    dsL.append(str(gwsL[i] * swsL[i]))
+  tk.append(ystL)
+  tk.append(dsL)
+  return tk
+  
+#接近50的数字相乘——接近50相乘
+def jj50Mul(n):
+  print("思考何为接近50的数，什么范围的数更适合这个方法")
+  #参数n为题数也就是乘数与被乘数的个数
+  dsL = []  #得数列表
+  ystL = []  #运算题列表11*12
+  tk = []  #题库列表输出列表，下标1得数列表ds；下标0为题；
+  gwsL = random_int_list(30, 70, n)  #被乘数列表——生成一个存储30~70范围内的一个长度n的列表
+  swsL = random_int_list(30, 70, n)  #乘数列表——生成一个存储30~70范围内的一个长度n的列表
+  
+  #获得两个接近接近50的数相乘的列表；以及获得得数列表
+  for i in range(n):
+    ystL.append(str(gwsL[i]) + '×' + str(swsL[i]))
+    dsL.append(str(gwsL[i] * swsL[i]))
+  tk.append(ystL)
+  tk.append(dsL)
+  return tk
+
+#任意数与9相乘——任意数乘9（n是任意数、Mul是乘、9是乘数或者被乘数）
+def n9Mul(n):
+  #参数n为题数也就是乘数与被乘数的个数
+  dsL = []  #得数列表
+  ystL = []  #运算题列表11*12
+  tk = []  #题库列表输出列表，下标1得数列表ds；下标0为题；
+  swsL = random_int_list(10, 99, n/4) + random_int_list(100, 999, n/4) + random_int_list(1000, 9999, n/4) + random_int_list(10000, 99999, n/4) #四位数以内任意数，该任意数等分成4份其中一份是两位数任意数、一份三位数任意数、一份四位数任意数、一份五位数任意数——生成以上任意数的一个长度n的列表
+  
+  #获得任意数乘9的计算题列表；以及获得得数列表
+  for i in range(n):
+    #随机数等于0数9“×”前面，随机数等于1任意数在“×”后面
+    if random.randint(0, 1) == 0:
+      ystL.append(str(swsL[i]) + '×' + str(9))
+    else:
+      ystL.append(str(9) + '×' + str(swsL[i]))
+    dsL.append(str(9 * swsL[i]))
+  tk.append(ystL)
+  tk.append(dsL)
+  return tk
+
+#11~19中的整数相乘——十一到十九相乘eTnXc
+def eTnMul(n):
+  #参数n为题数也就是乘数与被乘数的个数
+  dsL = []  #得数列表
+  ystL = []  #运算题列表11*12
+  tk = []  #题库列表输出列表，下标1得数列表ds；下标0为题；
+  gwsL = random_int_list(11, 19, n)  #被乘数列表——生成一个存储11~19范围内的一个长度n的列表
+  swsL = random_int_list(11, 19, n)  #乘数列表——生成一个存储11~19范围内的一个长度n的列表
+  
+  #获得两个11~19的数相乘的列表；以及获得得数列表
+  for i in range(n):
+    ystL.append(str(gwsL[i]) + '×' + str(swsL[i]))
+    dsL.append(str(gwsL[i] * swsL[i]))
+  tk.append(ystL)
+  tk.append(dsL)
+  return tk
+
+#两位数混合运算
+def lwsHunHeMul(n):
+  print("还没写好")
+
 #启动函数，按提示输入相应选项即可导出相应类型的题目以及所需题数
 def qidong():
+  print("所有题数必须为4的倍数\n")
   print("1：两位数加两位数、2：三位数加两位数、3：三位数加三位数、4：四位数加三位数、5：四位数加四位数\n")
   print("17：两位数减一位数、18：两位数减两位数、19：三位数减两位数、20：三位数减三位数、21：四位数减三位数、22：四位数减四位数\n")
-  print("33：两位数乘两位数、34：十同个补乘法、35：个同十补乘法、36：十位相同乘法、37：首尾同乘首尾补乘法\n")
+  print("33：两位数乘两位数、34：十同个补乘法、35：个同十补乘法、36：十位相同乘法、37：首尾同乘首尾补乘法、38：尾数为1的两位数相乘、39：接近100的数字相乘、40：接近50的数字相乘、41：任意数与9相乘（题数必须为4的倍数）、42：11~19中的整数相乘\n")
   tx = int(input("输入你需要的题型:"))  #题型
+  #抛出错误题型不在上述范围内——不正确重新输入
+  if ((tx <= 0) or (tx >= 64)):
+    print("请重新输入正确的题型代号")
+    qidong()
   ts = int(input("该题型所需题数:"))  #题数
+  #抛出错误题型不在上述范围内——不正确重新输入（可能不需要）
+  if (ts % 4 != 0):
+    print("题数需为4的倍数，请重新输入")
+    qidong()
   #1~16是加法，17~32是减法，33~48是乘法，49~64是除法
   if tx == 1:
     dy(twATw(ts))  #两位数加两位数
@@ -198,11 +306,22 @@ def qidong():
     dy(swxt(ts))  #两位数乘两位数——十位相同乘法
   elif tx == 37:
     dy(swtSwb(ts))  #两位数乘两位数——首尾同乘首尾补
-  elif (38 <= tx) and (tx <= 48):
+  elif tx == 38:
+    dy(w1LwMul(ts))  #尾数为1的两位数相乘——尾1两位数乘
+  elif tx == 39:
+    print("试行接近100的数的范围为80~120")
+    dy(jj100Mul(ts))  #接近100的数字相乘——接近100相乘
+  elif tx == 40:
+    print("试行接近100的数的范围为30~70")
+    dy(jj50Mul(ts))  #接近50的数字相乘——接近50相乘
+  elif tx == 41:
+    dy(n9Mul(ts))  #任意数与9相乘——nc9（n是任意数、Mul是乘、9是乘数或者被乘数）
+  elif tx == 42:
+    dy(eTnMul(ts))  #11~19中的整数相乘——十一到十九相乘eTnXc（Eleven to nineteen）
+  elif (43 <= tx) and (tx <= 48):
     print("暂无该乘法函数，待添加")
+  elif (49 <= tx) and (tx <= 64):
+    print("暂无该除法函数，待添加")
 
 #启动
 qidong()
-
-#两位数乘两位数44题  twMTw(44)  #十位相同个位互补的两位数相乘44题  stgb(44)
-#个位相同十位互补的两位数相乘44题  gtsb(44)  #十位相同的两位数相乘44题  swxt(44)
