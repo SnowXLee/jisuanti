@@ -2,6 +2,9 @@ import time
 import sys
 from addAndSubFun import addAndSub
 from mulFun import twoDigitMul
+from mulFun import threeDigitMul
+from mulFun import fourDigitMul
+
 
 #排版——排版出来的题本是二元列表
 def pb(tb):
@@ -64,7 +67,10 @@ def qidong():
   print("所有题数必须为4的倍数\n")
   print("1：两位数加两位数、2：三位数加两位数、3：三位数加三位数、4：四位数加三位数、5：四位数加四位数\n")
   print("17：两位数减一位数、18：两位数减两位数、19：三位数减两位数、20：三位数减三位数、21：四位数减三位数、22：四位数减四位数\n")
-  print("33：两位数乘两位数、34：十同个补乘法、35：个同十补乘法、36：十位相同乘法、37：首尾同乘首尾补乘法、38：尾数为1的两位数相乘、39：接近100的数字相乘、40：接近50的数字相乘、41：任意数与9相乘（题数必须为4的倍数）、42：11~19中的整数相乘\n")
+  print("33：两位数乘两位数、34：十同个补乘法、35：个同十补乘法、36：十位相同乘法、37：首尾同乘首尾补乘法、38：尾数为1的两位数相乘、39：接近100的数字相乘、40：接近50的数字相乘、41：11~19中的整数相乘\n")
+  print("42：任意数与9相乘、43：任意数与99相乘、44：任意数与999相乘、45：两位数混合运算\n")
+  print("46：三位以上的数字与11相乘、47：三位以上的数字与111相乘、48：接近两百的数字相乘、49：100~110中的整数相乘、50：三位数与两位数相乘、51：三位数乘以三位数、52：四位数与两位数相乘、53：四位数乘以三位数\n")
+  print("")
   tx = int(input("输入你需要的题型:"))  #题型
   #抛出错误题型不在上述范围内——不正确重新输入
   if ((tx <= 0) or (tx >= 64)):
@@ -125,10 +131,30 @@ def qidong():
     print("试行接近100的数的范围为30~70")
     dy(twoDigitMul.jj50Mul(ts), tName = dirNameMul + '接近50相乘')  #接近50的数字相乘——接近50相乘
   elif tx == 41:
-    dy(twoDigitMul.n9Mul(ts), tName = dirNameMul + '任意数与9相乘')  #任意数与9相乘——nc9（n是任意数、Mul是乘、9是乘数或者被乘数）
+    dy(twoDigitMul.eTNMul(ts), tName = dirNameMul + '11~19中的整数相乘')  #11~19中的整数相乘——十一到十九相乘eTnXc（Eleven to nineteen）
   elif tx == 42:
-    dy(twoDigitMul.eTnMul(ts), tName = dirNameMul + '11~19中的整数相乘')  #11~19中的整数相乘——十一到十九相乘eTnXc（Eleven to nineteen）
-  elif (43 <= tx) and (tx <= 48):
-    print("暂无该乘法函数，待添加")
-  elif (49 <= tx) and (tx <= 64):
+    dy(twoDigitMul.n9Mul(ts), tName = dirNameMul + '任意数与9相乘')  #任意数与9相乘——nc9（n是任意数、Mul是乘、9是乘数或者被乘数）
+  elif tx == 43:
+    dy(twoDigitMul.n99Mul(ts), tName = dirNameMul + '任意数与99相乘')  #任意数与99相乘——nc99（n是任意数、Mul是乘、99是乘数或者被乘数）
+  elif tx == 44:
+    dy(twoDigitMul.n999Mul(ts), tName = dirNameMul + '任意数与999相乘')  #任意数与999相乘——nc999（n是任意数、Mul是乘、9是乘数或者被乘数）
+  elif tx == 45:
+    print("还没写好")  #两位数混合运算
+  elif tx == 46:
+    dy(threeDigitMul.th11Mul(ts), tName = dirNameMul + '三位以上的数字与11相乘')  #三位以上的数字与11相乘——three 11 mulnineteen）
+  elif tx == 47:
+    dy(threeDigitMul.th111Mul(ts), tName = dirNameMul + '三位以上的数字与111相乘')  #三位以上的数字与111相乘——three 111 mul
+  elif tx == 48:
+    dy(threeDigitMul.jj200Mul(ts), tName = dirNameMul + '接近两百的数字相乘')  #接近两百的数字相乘——接近200相乘
+  elif tx == 49:
+    dy(threeDigitMul.mul100_110(ts), tName = dirNameMul + '100~110中的整数相乘')  #100~110中的整数相乘——mul 100 110
+  elif tx == 50:
+    dy(threeDigitMul.thTwMul(ts), tName = dirNameMul + '#三位数与两位数相乘')  #三位数与两位数相乘——three two mul
+  elif tx == 51:
+    dy(threeDigitMul.thThMul(ts), tName = dirNameMul + '三位数乘以三位数')  #三位数乘以三位数——three three mul
+  elif tx == 52:
+    dy(fourDigitMul.foTwMul(ts), tName = dirNameMul + '四位数与两位数相乘')  #四位数与两位数相乘——four two mul
+  elif tx == 53:
+    dy(fourDigitMul.foThMul(ts), tName = dirNameMul + '四位数乘以三位数')  #四位数乘以三位数——four three mul
+  elif (54 <= tx) and (tx <= 64):
     print("暂无该除法函数，待添加")

@@ -165,8 +165,48 @@ def n9Mul(n):
   tk.append(dsL)
   return tk
 
+#任意数与99相乘——任意数乘99（n是任意数、Mul是乘、99是乘数或者被乘数）
+def n99Mul(n):
+  #参数n为题数也就是乘数与被乘数的个数
+  dsL = []  #得数列表
+  ystL = []  #运算题列表11*12
+  tk = []  #题库列表输出列表，下标1得数列表ds；下标0为题；
+  bcsL = general.random_int_list(10, 99, n/4) + general.random_int_list(100, 999, n/4) + general.random_int_list(1000, 9999, n/4) + general.random_int_list(10000, 99999, n/4) #四位数以内任意数，该任意数等分成4份其中一份是两位数任意数、一份三位数任意数、一份四位数任意数、一份五位数任意数——生成以上任意数的一个长度n的列表
+  
+  #获得任意数乘99的计算题列表；以及获得得数列表
+  for i in range(n):
+    #随机数等于0数99“×”前面，随机数等于1任意数在“×”后面
+    if random.randint(0, 1) == 0:
+      ystL.append(str(bcsL[i]) + '×' + str(99))
+    else:
+      ystL.append(str(99) + '×' + str(bcsL[i]))
+    dsL.append(str(99 * bcsL[i]))
+  tk.append(ystL)
+  tk.append(dsL)
+  return tk
+
+#任意数与999相乘——任意数乘999（n是任意数、Mul是乘、999是乘数或者被乘数）
+def n999Mul(n):
+  #参数n为题数也就是乘数与被乘数的个数
+  dsL = []  #得数列表
+  ystL = []  #运算题列表11*12
+  tk = []  #题库列表输出列表，下标1得数列表ds；下标0为题；
+  bcsL = general.random_int_list(10, 99, n/4) + general.random_int_list(100, 999, n/4) + general.random_int_list(1000, 9999, n/4) + general.random_int_list(10000, 99999, n/4) #四位数以内任意数，该任意数等分成4份其中一份是两位数任意数、一份三位数任意数、一份四位数任意数、一份五位数任意数——生成以上任意数的一个长度n的列表
+  
+  #获得任意数乘999的计算题列表；以及获得得数列表
+  for i in range(n):
+    #随机数等于0数999“×”前面，随机数等于1任意数在“×”后面
+    if random.randint(0, 1) == 0:
+      ystL.append(str(bcsL[i]) + '×' + str(999))
+    else:
+      ystL.append(str(999) + '×' + str(bcsL[i]))
+    dsL.append(str(999 * bcsL[i]))
+  tk.append(ystL)
+  tk.append(dsL)
+  return tk
+
 #11~19中的整数相乘——十一到十九相乘eTnXc
-def eTnMul(n):
+def eTNMul(n):
   #参数n为题数也就是乘数与被乘数的个数
   dsL = []  #得数列表
   ystL = []  #运算题列表11*12
@@ -182,6 +222,6 @@ def eTnMul(n):
   tk.append(dsL)
   return tk
 
-#两位数混合运算
-def lwsHunHeMul(n):
+#两位数混合运算——two mix mul
+def twMixMul(n):
   print("还没写好")
