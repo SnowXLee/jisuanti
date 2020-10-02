@@ -98,18 +98,13 @@ def w1LwMul(n):
   dsL = []  #得数列表
   ystL = []  #运算题列表11*12
   tk = []  #题库列表输出列表，下标1得数列表ds；下标0为题；
-  gwsL = general.random_int_list(1, 9, n)  #个位数——生成一个存储尾数为1的两位数的十位数字的一个长度n的列表
-  swsL = general.random_int_list(10, 99, n)  #十位数——生成一个存储两位数数字的一个长度n的列表
+  gwsL = general.random_int_list(1, 9, n)  #乘数的十位数——生成一个存储尾数为1的两位数的十位数字的一个长度n的列表
+  swsL = general.random_int_list(1, 9, n)  #被乘数的十位数——生成一个存储尾数为1的两位数十位数数字的一个长度n的列表
   
-  #获得尾数为1的两位数列表以及另一个两位数列表；以及获得得数列表
-  #
+  #获得两个尾数为1的两位数列表；以及获得得数列表
   for i in range(n):
-    #随机数等于0首尾同的数在“×”前面，随机数等于1首尾补的数在“×”后面
-    if random.randint(0, 1) == 0:
-      ystL.append(str(swsL[i]) + '×' + str(gwsL[i] * 10 + 1))
-    else:
-      ystL.append(str(gwsL[i] * 10 + 1) + '×' + str(swsL[i]))
-    dsL.append(str((gwsL[i] * 10 + 1) * (swsL[i])))
+    ystL.append(str(gwsL[i] * 10 + 1) + '×' + str(swsL[i] * 10 + 1))
+    dsL.append(str((gwsL[i] * 10 + 1) * (swsL[i] * 10 + 1)))
   tk.append(ystL)
   tk.append(dsL)
   return tk
