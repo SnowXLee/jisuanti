@@ -82,9 +82,9 @@ def qidong():
     print("题数需为4的倍数，请重新输入")
     qidong()
   dirNameAdd = ".\\tkANDds\\addition\\"
-  dirNameSub = ".\\tkANDds\\division\\"
+  dirNameSub = ".\\tkANDds\\subtraction\\"
   dirNameMul = ".\\tkANDds\\multiplication\\"
-  dirNameDiv = ".\\tkANDds\\subtraction\\"
+  dirNameDiv = ".\\tkANDds\\division\\"
   #1~16是加法，17~32是减法，33~48是乘法，49~64是除法
   if tx == 1:
     dy(addAndSub.twATw(ts), tName = dirNameAdd + '两位数加两位数')  #两位数加两位数
