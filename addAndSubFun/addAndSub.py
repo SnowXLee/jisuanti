@@ -53,7 +53,6 @@ def thATh(n):
     ystL.append(str(bjsL[i]) + '+' + str(jsL[i]))
   tk.append(ystL)
   tk.append(dsL)
-  print(tk)
   return tk
 
 #四位数加三位数——four add three
