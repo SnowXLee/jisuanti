@@ -81,80 +81,80 @@ def qidong():
   if (ts % 4 != 0):
     print("题数需为4的倍数，请重新输入")
     qidong()
+  #1~16是加法，17~32是减法，33~64是乘法
   dirNameAdd = ".\\tkANDds\\addition\\"
   dirNameSub = ".\\tkANDds\\subtraction\\"
   dirNameMul = ".\\tkANDds\\multiplication\\"
   dirNameDiv = ".\\tkANDds\\division\\"
-  #1~16是加法，17~32是减法，33~48是乘法，49~64是除法
-  if tx == 1:
-    dy(addAndSub.twATw(ts), tName = dirNameAdd + '两位数加两位数')  #两位数加两位数
-  elif tx == 2:
-    dy(addAndSub.thATw(ts), tName = dirNameAdd + '三位数加两位数')  #三位数加两位数
-  elif tx == 3:
-    dy(addAndSub.thATh(ts), tName = dirNameAdd + '三位数加三位数')  #三位数加三位数
-  elif tx == 4:
-    dy(addAndSub.foATh(ts), tName = dirNameAdd + '四位数加三位数')  #四位数加三位数
-  elif tx == 5:
-    dy(addAndSub.foAFo(ts), tName = dirNameAdd + '四位数加四位数')  #四位数加四位数
-  elif (6 <= tx) and (tx <= 16):
-    print("暂无该加法的函数，待添加")
-  elif tx == 17:
-    dy(addAndSub.twSOn(ts), tName = dirNameSub + '两位数减一位数')  #两位数减一位数
-  elif tx == 18:
-    dy(addAndSub.twSTw(ts), tName = dirNameSub + '两位数减两位数')  #两位数减两位数
-  elif tx == 19:
-    dy(addAndSub.thSTw(ts), tName = dirNameSub + '三位数减两位数')  #三位数减两位数
-  elif tx == 20:
-    dy(addAndSub.thSTh(ts), tName = dirNameSub + '三位数减三位数')  #三位数减三位数
-  elif tx == 21:
-    dy(addAndSub.foSTh(ts), tName = dirNameSub + '四位数减三位数')  #四位数减三位数
-  elif tx == 22:
-    dy(addAndSub.foSFo(ts), tName = dirNameSub + '四位数减四位数')  #四位数减四位数
-  elif (24 <= tx) and (tx <= 32):
-    print("暂无该减法函数，待添加")
-  elif tx == 33:
-    dy(twoDigitMul.twMTw(ts), tName = dirNameMul + '两位数乘两位数')  #两位数乘两位数——普通
-  elif tx == 34:
-    dy(twoDigitMul.stgb(ts), tName = dirNameMul + '十同个补乘法')  #两位数乘两位数——十同个补乘法
-  elif tx == 35:
-    dy(twoDigitMul.gtsb(ts), tName = dirNameMul + '个同十补乘法')  #两位数乘两位数——个同十补乘法
-  elif tx == 36:
-    dy(twoDigitMul.swxt(ts), tName = dirNameMul + '十位相同乘法')  #两位数乘两位数——十位相同乘法
-  elif tx == 37:
-    dy(twoDigitMul.swtSwb(ts), tName = dirNameMul + '首尾同乘首尾补')  #两位数乘两位数——首尾同乘首尾补
-  elif tx == 38:
-    dy(twoDigitMul.w1LwMul(ts), tName = dirNameMul + '尾1两位数乘')  #尾数为1的两位数相乘——尾1两位数乘
-  elif tx == 39:
-    print("试行接近100的数的范围为80~120")
-    dy(twoDigitMul.jj100Mul(ts), tName = dirNameMul + '接近100相乘')  #接近100的数字相乘——接近100相乘
-  elif tx == 40:
-    print("试行接近100的数的范围为30~70")
-    dy(twoDigitMul.jj50Mul(ts), tName = dirNameMul + '接近50相乘')  #接近50的数字相乘——接近50相乘
-  elif tx == 41:
-    dy(twoDigitMul.eTNMul(ts), tName = dirNameMul + '11~19中的整数相乘')  #11~19中的整数相乘——十一到十九相乘eTnXc（Eleven to nineteen）
-  elif tx == 42:
-    dy(twoDigitMul.n9Mul(ts), tName = dirNameMul + '任意数与9相乘')  #任意数与9相乘——nc9（n是任意数、Mul是乘、9是乘数或者被乘数）
-  elif tx == 43:
-    dy(twoDigitMul.n99Mul(ts), tName = dirNameMul + '任意数与99相乘')  #任意数与99相乘——nc99（n是任意数、Mul是乘、99是乘数或者被乘数）
-  elif tx == 44:
-    dy(twoDigitMul.n999Mul(ts), tName = dirNameMul + '任意数与999相乘')  #任意数与999相乘——nc999（n是任意数、Mul是乘、9是乘数或者被乘数）
-  elif tx == 45:
-    print("还没写好")  #两位数混合运算
-  elif tx == 46:
-    dy(threeDigitMul.th11Mul(ts), tName = dirNameMul + '三位以上的数字与11相乘')  #三位以上的数字与11相乘——three 11 mulnineteen）
-  elif tx == 47:
-    dy(threeDigitMul.th111Mul(ts), tName = dirNameMul + '三位以上的数字与111相乘')  #三位以上的数字与111相乘——three 111 mul
-  elif tx == 48:
-    dy(threeDigitMul.jj200Mul(ts), tName = dirNameMul + '接近两百的数字相乘')  #接近两百的数字相乘——接近200相乘
-  elif tx == 49:
-    dy(threeDigitMul.mul100_110(ts), tName = dirNameMul + '100~110中的整数相乘')  #100~110中的整数相乘——mul 100 110
-  elif tx == 50:
-    dy(threeDigitMul.thTwMul(ts), tName = dirNameMul + '#三位数与两位数相乘')  #三位数与两位数相乘——three two mul
-  elif tx == 51:
-    dy(threeDigitMul.thThMul(ts), tName = dirNameMul + '三位数乘以三位数')  #三位数乘以三位数——three three mul
-  elif tx == 52:
-    dy(fourDigitMul.foTwMul(ts), tName = dirNameMul + '四位数与两位数相乘')  #四位数与两位数相乘——four two mul
-  elif tx == 53:
-    dy(fourDigitMul.foThMul(ts), tName = dirNameMul + '四位数乘以三位数')  #四位数乘以三位数——four three mul
-  elif (54 <= tx) and (tx <= 64):
-    print("暂无该除法函数，待添加")
+  #打印函数dy(题本类型tlx，题名字tName)
+  tName = {
+    1: dirNameAdd + '两位数加两位数',
+    2: dirNameAdd + '三位数加两位数',
+    3: dirNameAdd + '三位数加三位数',
+    4: dirNameAdd + '四位数加三位数',
+    5: dirNameAdd + '四位数加四位数',
+    17: dirNameSub + '两位数减一位数',
+    18: dirNameSub + '两位数减两位数',
+    19: dirNameSub + '三位数减两位数',
+    20: dirNameSub + '三位数减三位数',
+    21: dirNameSub + '四位数减三位数',
+    22: dirNameSub + '四位数减四位数',
+    33: dirNameMul + '两位数乘两位数',
+    34: dirNameMul + '十同个补乘法',
+    35: dirNameMul + '个同十补乘法',
+    36: dirNameMul + '十位相同乘法',
+    37: dirNameMul + '首尾同乘首尾补',
+    38: dirNameMul + '尾1两位数乘',
+    39: dirNameMul + '接近100相乘',
+    40: dirNameMul + '接近50相乘',
+    41: dirNameMul + '11~19中的整数相乘',
+    42: dirNameMul + '任意数与9相乘',
+    43: dirNameMul + '任意数与99相乘',
+    44: dirNameMul + '任意数与999相乘',
+    45: dirNameMul + '还没写好，两位数混合运算',
+    46: dirNameMul + '三位以上的数字与11相乘',
+    47: dirNameMul + '三位以上的数字与111相乘',
+    48: dirNameMul + '接近两百的数字相乘',
+    49: dirNameMul + '100~110中的整数相乘',
+    50: dirNameMul + '#三位数与两位数相乘',
+    51: dirNameMul + '三位数乘以三位数',
+    52: dirNameMul + '四位数与两位数相乘',
+    53: dirNameMul + '四位数乘以三位数',
+  }
+  #题的类型tlx——打印函数dy(题本类型tlx，题名字tName)；ts是tlx里面调用的题型的参数——题数
+  tlx = {
+    1: addAndSub.twATw,
+    2: addAndSub.thATw,
+    3: addAndSub.thATh,
+    4: addAndSub.foATh,
+    5: addAndSub.foAFo,
+    17: addAndSub.twSOn,
+    18: addAndSub.twSTw,
+    19: addAndSub.thSTw,
+    20: addAndSub.thSTh,
+    21: addAndSub.foSTh,
+    22: addAndSub.foSFo,
+    33: twoDigitMul.twMTw,
+    34: twoDigitMul.stgb,
+    35: twoDigitMul.gtsb,
+    36: twoDigitMul.swxt,
+    37: twoDigitMul.swtSwb,
+    38: twoDigitMul.w1LwMul,
+    39: twoDigitMul.jj100Mul,
+    40: twoDigitMul.jj50Mul,
+    41: twoDigitMul.eTNMul,
+    42: twoDigitMul.n9Mul,
+    43: twoDigitMul.n99Mul,
+    44: twoDigitMul.n999Mul,
+    45: twoDigitMul.twMixMul,
+    46: threeDigitMul.th11Mul,
+    47: threeDigitMul.th111Mul,
+    48: threeDigitMul.jj200Mul,
+    49: threeDigitMul.mul100_110,
+    50: threeDigitMul.thTwMul,
+    51: threeDigitMul.thThMul,
+    52: fourDigitMul.foTwMul,
+    53: fourDigitMul.foThMul,
+  }
+  #调用打印函数dy(题本类型tlx，题名字tName)；ts是tlx里面调用的题型的参数——题数
+  dy(tlx.get(tx, '暂无该加法的函数，待添加')(ts), tName.get(tx, '暂无该加法的函数的对应键，待添加'))
