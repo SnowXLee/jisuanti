@@ -116,45 +116,45 @@ def qidong():
     47: dirNameMul + '三位以上的数字与111相乘',
     48: dirNameMul + '接近两百的数字相乘',
     49: dirNameMul + '100~110中的整数相乘',
-    50: dirNameMul + '#三位数与两位数相乘',
+    50: dirNameMul + '三位数与两位数相乘',
     51: dirNameMul + '三位数乘以三位数',
     52: dirNameMul + '四位数与两位数相乘',
     53: dirNameMul + '四位数乘以三位数',
   }
   #题的类型tlx——打印函数dy(题本类型tlx，题名字tName)；ts是tlx里面调用的题型的参数——题数
   tlx = {
-    1: addAndSub.twATw,
-    2: addAndSub.thATw,
-    3: addAndSub.thATh,
-    4: addAndSub.foATh,
-    5: addAndSub.foAFo,
-    17: addAndSub.twSOn,
-    18: addAndSub.twSTw,
-    19: addAndSub.thSTw,
-    20: addAndSub.thSTh,
-    21: addAndSub.foSTh,
-    22: addAndSub.foSFo,
-    33: twoDigitMul.twMTw,
-    34: twoDigitMul.stgb,
-    35: twoDigitMul.gtsb,
-    36: twoDigitMul.swxt,
-    37: twoDigitMul.swtSwb,
-    38: twoDigitMul.w1LwMul,
-    39: twoDigitMul.jj100Mul,
-    40: twoDigitMul.jj50Mul,
-    41: twoDigitMul.eTNMul,
-    42: twoDigitMul.n9Mul,
-    43: twoDigitMul.n99Mul,
-    44: twoDigitMul.n999Mul,
-    45: twoDigitMul.twMixMul,
-    46: threeDigitMul.th11Mul,
-    47: threeDigitMul.th111Mul,
-    48: threeDigitMul.jj200Mul,
-    49: threeDigitMul.mul100_110,
-    50: threeDigitMul.thTwMul,
-    51: threeDigitMul.thThMul,
-    52: fourDigitMul.foTwMul,
-    53: fourDigitMul.foThMul,
+    1: addAndSub.twATw,#两位数加两位数
+    2: addAndSub.thATw,#三位数加两位数
+    3: addAndSub.thATh,#三位数加三位数
+    4: addAndSub.foATh,#四位数加三位数
+    5: addAndSub.foAFo,#四位数加四位数
+    17: addAndSub.twSOn,#两位数减一位数
+    18: addAndSub.twSTw,#两位数减两位数
+    19: addAndSub.thSTw,#三位数减两位数
+    20: addAndSub.thSTh,#三位数减三位数
+    21: addAndSub.foSTh,#四位数减三位数
+    22: addAndSub.foSFo,#四位数减四位数
+    33: twoDigitMul.twMTw,#两位数乘两位数
+    34: twoDigitMul.stgb,#十同个补乘法
+    35: twoDigitMul.gtsb,#个同十补乘法
+    36: twoDigitMul.swxt,#十位相同乘法
+    37: twoDigitMul.swtSwb,#首尾同乘首尾补
+    38: twoDigitMul.w1LwMul,#尾1两位数乘
+    39: twoDigitMul.jj100Mul,#接近100相乘
+    40: twoDigitMul.jj50Mul,#接近50相乘
+    41: twoDigitMul.eTNMul,#11~19中的整数相乘
+    42: twoDigitMul.n9Mul,#任意数与9相乘
+    43: twoDigitMul.n99Mul,#任意数与99相乘
+    44: twoDigitMul.n999Mul,#任意数与999相乘
+    45: twoDigitMul.twMixMul,#还没写好，两位数混合运算
+    46: threeDigitMul.th11Mul,#三位以上的数字与11相乘
+    47: threeDigitMul.th111Mul,#三位以上的数字与111相乘
+    48: threeDigitMul.jj200Mul,#接近两百的数字相乘
+    49: threeDigitMul.mul100_110,#100~110中的整数相乘
+    50: threeDigitMul.thTwMul,#三位数与两位数相乘
+    51: threeDigitMul.thThMul,#三位数乘以三位数
+    52: fourDigitMul.foTwMul,#四位数与两位数相乘
+    53: fourDigitMul.foThMul,#四位数乘以三位数
   }
   #调用打印函数dy(题本类型tlx，题名字tName)；ts是tlx里面调用的题型的参数——题数
   dy(tlx.get(tx, '暂无该加法的函数，待添加')(ts), tName.get(tx, '暂无该加法的函数的对应键，待添加'))
