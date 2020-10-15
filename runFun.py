@@ -64,7 +64,7 @@ def dy(tb, tName):
 
 #启动函数，按提示输入相应选项即可导出相应类型的题目以及所需题数
 def qidong():
-  #题库的题类型的中文名
+  #题库的题类型的中文名——下次修改的方法，第一步在tName_zh中添加对应的题目的中文名称与号码，第二步在打印题型对应的号码的print中的对应行输入tName_zh。第三步tName中添加相应号码的tName_zh。第四步tlx中添加对应的函数
   tName_zh = {
     "1~16": "加法",
     1: '两位数加两位数',
@@ -138,43 +138,43 @@ def qidong():
   #打印函数dy(题本类型tlx，题名字与路径tName)
   tName = {
     #1~16:加法
-    1: dirNameAdd + '两位数加两位数',
-    2: dirNameAdd + '三位数加两位数',
-    3: dirNameAdd + '三位数加三位数',
-    4: dirNameAdd + '四位数加三位数',
-    5: dirNameAdd + '四位数加四位数',
+    1: dirNameAdd + tName_zh[1],
+    2: dirNameAdd + tName_zh[2],
+    3: dirNameAdd + tName_zh[3],
+    4: dirNameAdd + tName_zh[4],
+    5: dirNameAdd + tName_zh[5],
     #17~32:减法
-    17: dirNameSub + '两位数减一位数',
-    18: dirNameSub + '两位数减两位数',
-    19: dirNameSub + '三位数减两位数',
-    20: dirNameSub + '三位数减三位数',
-    21: dirNameSub + '四位数减三位数',
-    22: dirNameSub + '四位数减四位数',
+    17: dirNameSub + tName_zh[17],
+    18: dirNameSub + tName_zh[18],
+    19: dirNameSub + tName_zh[19],
+    20: dirNameSub + tName_zh[20],
+    21: dirNameSub + tName_zh[21],
+    22: dirNameSub + tName_zh[22],
     #33~56:两位数乘法
-    33: dirNameMul + '两位数乘两位数',
-    34: dirNameMul + '十同个补乘法',
-    35: dirNameMul + '个同十补乘法',
-    36: dirNameMul + '十位相同乘法',
-    37: dirNameMul + '首尾同乘首尾补',
-    38: dirNameMul + '尾1两位数乘',
-    39: dirNameMul + '接近100相乘',
-    40: dirNameMul + '接近50相乘',
-    41: dirNameMul + '11~19中的整数相乘',
-    42: dirNameMul + '还没写好，两位数混合运算',
+    33: dirNameMul + tName_zh[33],
+    34: dirNameMul + tName_zh[34],
+    35: dirNameMul + tName_zh[35],
+    36: dirNameMul + tName_zh[36],
+    37: dirNameMul + tName_zh[37],
+    38: dirNameMul + tName_zh[38],
+    39: dirNameMul + tName_zh[39],
+    40: dirNameMul + tName_zh[40],
+    41: dirNameMul + tName_zh[41],
+    42: dirNameMul + tName_zh[42],
     #57~66三位数乘法
-    57: dirNameMul + '三位数与两位数相乘',
-    58: dirNameMul + '三位数乘以三位数',
-    59: dirNameMul + '三位以上的数字与11相乘',
-    60: dirNameMul + '三位以上的数字与111相乘',
-    61: dirNameMul + '100~110中的整数相乘',
-    62: dirNameMul + '接近两百的数字相乘',
+    57: dirNameMul + tName_zh[57],
+    58: dirNameMul + tName_zh[58],
+    59: dirNameMul + tName_zh[59],
+    60: dirNameMul + tName_zh[60],
+    61: dirNameMul + tName_zh[61],
+    62: dirNameMul + tName_zh[62],
     #67~72四位数乘法
-    67: dirNameMul + '四位数与两位数相乘',
-    68: dirNameMul + '四位数乘以三位数',
+    67: dirNameMul + tName_zh[67],
+    68: dirNameMul + tName_zh[68],
     #73~88:任意数与*乘法
-    73: dirNameMul + '任意数与9相乘',
-    74: dirNameMul + '任意数与99相乘',
-    75: dirNameMul + '任意数与999相乘',
+    73: dirNameMul + tName_zh[73],
+    74: dirNameMul + tName_zh[74],
+    75: dirNameMul + tName_zh[75],
   }
   #题的类型tlx——打印函数dy(题本类型tlx，题名字tName)；ts是tlx里面调用的题型的参数——题数
   tlx = {
