@@ -5,7 +5,6 @@ from mulFun import twoDigitMul
 from mulFun import threeDigitMul
 from mulFun import fourDigitMul
 
-
 #排版——排版出来的题本是二元列表
 def pb(tb):
   #统计一个题本中有多少个种类的题型——txzl；题型的0及双数是题；题型的单数是答案，是单数减一的题的得数
@@ -62,24 +61,30 @@ def dy(tb, tName):
   fTb.close()
   fDs.close()
 
-#启动函数，按提示输入相应选项即可导出相应类型的题目以及所需题数
-def qidong():
-  #题库的题类型的中文名——下次修改的方法，第一步在tName_zh中添加对应的题目的中文名称与号码，第二步在打印题型对应的号码的print中的对应行输入tName_zh。第三步tName中添加相应号码的tName_zh。第四步tlx中添加对应的函数
-  tName_zh = {
-    "1~16": "加法",
+#tkNameAPath——题库中文名称(也是txt文件的前缀名)和导出题库的txt路径，里面是字典
+#NP——name or path
+def tkNamePath(np, n):
+  #导出题库的txt路径
+  dirNameAdd = ".\\tkANDds\\addition\\"
+  dirNameSub = ".\\tkANDds\\subtraction\\"
+  dirNameMul = ".\\tkANDds\\multiplication\\"
+  dirNameDiv = ".\\tkANDds\\division\\"
+  #tkName——题库中文名称(也是txt文件的前缀名)
+  tkName = {
+    # "1~16": "加法",
     1: '两位数加两位数',
     2: '三位数加两位数',
     3: '三位数加三位数',
     4: '四位数加三位数',
     5: '四位数加四位数',
-    "17~32": "减法",
+    # "17~32": "减法",
     17: '两位数减一位数',
     18: '两位数减两位数',
     19: '三位数减两位数',
     20: '三位数减三位数',
     21: '四位数减三位数',
     22: '四位数减四位数',
-    "33~56": "两位数乘法",
+    # "33~56": "两位数乘法",
     33: '两位数乘两位数',
     34: '十同个补乘法',
     35: '个同十补乘法',
@@ -90,92 +95,40 @@ def qidong():
     40: '接近50相乘',
     41: '11~19中的整数相乘',
     42: '还没写好，两位数混合运算',
-    "57~66": "三位数乘法",
+    # "57~66": "三位数乘法",
     57: '三位数与两位数相乘',
     58: '三位数乘以三位数',
     59: '三位以上的数字与11相乘',
     60: '三位以上的数字与111相乘',
     61: '100~110中的整数相乘',
     62: '接近两百的数字相乘',
-    "67~72": "四位数乘法",
+    # "67~72": "四位数乘法",
     67: '四位数与两位数相乘',
     68: '四位数乘以三位数',
-    "73~88": "任意数与*乘法",
+    # "73~88": "任意数与n乘法",
     73: '任意数与9相乘',
     74: '任意数与99相乘',
     75: '任意数与999相乘',
   }
-  print("所有题数必须为4的倍数\n")
-  #打印题型对应的号码
-  #1~16:加法
-  print("1："+tName_zh[1]+"、2："+tName_zh[2]+"、3："+tName_zh[3]+"、4："+tName_zh[4]+"、5："+tName_zh[5]+"\n")
-  #17~32:减法
-  print("17："+tName_zh[17]+"、18："+tName_zh[18]+"、19："+tName_zh[19]+"、20："+tName_zh[20]+"、21："+tName_zh[21]+"、22："+tName_zh[22]+"\n")
-  #33~56:两位数乘法
-  print("33："+tName_zh[33]+"、34："+tName_zh[34]+"、35："+tName_zh[35]+"、36："+tName_zh[36]+"、37："+tName_zh[37]+"、38："+tName_zh[38]+"、39："+tName_zh[39]+"、40："+tName_zh[40]+"、41："+tName_zh[41]+"、42："+tName_zh[42]+"\n")
-  #57~66三位数乘法
-  print("57："+tName_zh[57]+"、58："+tName_zh[58]+"、59："+tName_zh[59]+"、60："+tName_zh[60]+"、61："+tName_zh[61]+"、62："+tName_zh[62]+"\n")
-  #67~72四位数乘法
-  print("67："+tName_zh[67]+"、68："+tName_zh[68]+"\n")
-  #73~88:任意数与*乘法
-  print("73："+tName_zh[73]+"、74："+tName_zh[74]+"、75："+tName_zh[75]+"\n")
-  tx = int(input("输入你需要的题型:"))  #题型
-  #抛出错误题型不在上述范围内——不正确重新输入
-  if ((tx <= 0) or (tx >= 100)):
-    print("请重新输入正确的题型代号")
-    qidong()
-  ts = int(input("该题型所需题数:"))  #题数
-  #抛出错误题型不在上述范围内——不正确重新输入（可能不需要）
-  if (ts % 4 != 0):
-    print("题数需为4的倍数，请重新输入")
-    qidong()
-  #1~16是加法，17~32是减法，33~64是乘法
-  dirNameAdd = ".\\tkANDds\\addition\\"
-  dirNameSub = ".\\tkANDds\\subtraction\\"
-  dirNameMul = ".\\tkANDds\\multiplication\\"
-  dirNameDiv = ".\\tkANDds\\division\\"
-  #1~16:加法, 17~32:减法, 33~64:乘法{33~56:两位数乘法, 57~72:三位数乘法,67~72四位数乘法:四位数乘法, 73~88:任意数与*乘法,}
-  #打印函数dy(题本类型tlx，题名字与路径tName)
-  tName = {
-    #1~16:加法
-    1: dirNameAdd + tName_zh[1],
-    2: dirNameAdd + tName_zh[2],
-    3: dirNameAdd + tName_zh[3],
-    4: dirNameAdd + tName_zh[4],
-    5: dirNameAdd + tName_zh[5],
-    #17~32:减法
-    17: dirNameSub + tName_zh[17],
-    18: dirNameSub + tName_zh[18],
-    19: dirNameSub + tName_zh[19],
-    20: dirNameSub + tName_zh[20],
-    21: dirNameSub + tName_zh[21],
-    22: dirNameSub + tName_zh[22],
-    #33~56:两位数乘法
-    33: dirNameMul + tName_zh[33],
-    34: dirNameMul + tName_zh[34],
-    35: dirNameMul + tName_zh[35],
-    36: dirNameMul + tName_zh[36],
-    37: dirNameMul + tName_zh[37],
-    38: dirNameMul + tName_zh[38],
-    39: dirNameMul + tName_zh[39],
-    40: dirNameMul + tName_zh[40],
-    41: dirNameMul + tName_zh[41],
-    42: dirNameMul + tName_zh[42],
-    #57~66三位数乘法
-    57: dirNameMul + tName_zh[57],
-    58: dirNameMul + tName_zh[58],
-    59: dirNameMul + tName_zh[59],
-    60: dirNameMul + tName_zh[60],
-    61: dirNameMul + tName_zh[61],
-    62: dirNameMul + tName_zh[62],
-    #67~72四位数乘法
-    67: dirNameMul + tName_zh[67],
-    68: dirNameMul + tName_zh[68],
-    #73~88:任意数与*乘法
-    73: dirNameMul + tName_zh[73],
-    74: dirNameMul + tName_zh[74],
-    75: dirNameMul + tName_zh[75],
-  }
+  #np①name返回tkName[n]，用于print出来②path返回dirName**+tkName[n]，用于txt导出路径以及命名文件
+  #抛出异常——当tkName中没有的键值时返回一个值None，然后在启动qidong()中接住这个值不让程序继续往下运行
+  if tkName.get(n, None) == None:
+    return None
+  if np == "name":
+    return tkName.get(n)
+  elif np == "path":
+    #1~16: 加法
+    if 1 <= n <= 16:
+      return (dirNameAdd + tkName.get(n))
+    #17~32: 减法
+    elif 17 <= n <= 32:
+      return (dirNameSub + tkName.get(n))
+    #33~88：乘法
+    elif 33 <= n <= 88:
+      return (dirNameMul + tkName.get(n))
+
+#tkFun()——内含题库函数的字典，用于给dy(题本类型tlx，题名字tName)的tlx参数题干相应函数
+def tkFun(tx, ts):
   #题的类型tlx——打印函数dy(题本类型tlx，题名字tName)；ts是tlx里面调用的题型的参数——题数
   tlx = {
     #1~16:加法
@@ -212,10 +165,35 @@ def qidong():
     #67~72四位数乘法
     67: fourDigitMul.foTwMul,#四位数与两位数相乘
     68: fourDigitMul.foThMul,#四位数乘以三位数
-    #73~88:任意数与*乘法
+    #73~88:任意数与n乘法
     73: twoDigitMul.n9Mul,#任意数与9相乘
     74: twoDigitMul.n99Mul,#任意数与99相乘
     75: twoDigitMul.n999Mul,#任意数与999相乘
   }
-  #调用打印函数dy(题本类型tlx，题名字tName)；ts是tlx里面调用的题型的参数——题数
-  dy(tlx.get(tx, '暂无该加法的函数，待添加')(ts), tName.get(tx, '暂无该加法的函数的对应键，待添加'))
+  return tlx.get(tx, '暂无该加法的函数，待添加')(ts)
+
+#启动函数，按提示输入相应选项即可导出相应类型的题目以及所需题数
+def qidong():
+  #题库的题类型的中文名——下次修改的方法，第一步在tName_zh中添加对应的题目的中文名称与号码，第二步在打印题型对应的号码的print中的对应行输入tName_zh。第三步tName中添加相应号码的tName_zh。第四步tlx中添加对应的函数
+  #刚进程序时打印print对应题型的号码等提示信息
+  for i in range(88):
+    #每到字典的题型分类边界值时打印一个换行符
+    if tkNamePath("name", i) != None:
+      print((str(i) + "." + tkNamePath("name", i)), end="  ")
+    if i in {16, 32, 56, 66, 72, 88}:
+      print("\n")
+  print("\n")
+  print("所有题数必须为4的倍数\n", end="\n")
+  tx = int(input("输入你需要的题型:"))  #题型
+  #抛出错误题型不在上述范围内——不正确重新输入
+  if ((tx <= 0) or (tx >= 100)):
+    print("请重新输入正确的题型代号")
+    qidong()
+  ts = int(input("该题型所需题数:"))  #题数
+  #抛出错误题型不在上述范围内——不正确重新输入（可能不需要）
+  if (ts % 4 != 0):
+    print("题数需为4的倍数，请重新输入")
+    qidong()
+  #1~16:加法, 17~32:减法, 33~64:乘法{33~56:两位数乘法, 57~72:三位数乘法,67~72四位数乘法:四位数乘法, 73~88:任意数与n乘法,}
+  #调用打印函数dy(题本类型tlx=tkFun(tx, ts)，题名字tName=tkNamePath("path", tx))；ts是tlx里面调用的题型的参数——题数
+  dy(tkFun(tx, ts), tkNamePath("path", tx))
