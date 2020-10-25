@@ -105,6 +105,7 @@ def tkNamePath(np, n):
     # "67~72": "四位数乘法",
     67: '四位数与两位数相乘',
     68: '四位数乘以三位数',
+    69: '四位数乘以四位数',
     # "73~88": "任意数与n乘法",
     73: '任意数与9相乘',
     74: '任意数与99相乘',
@@ -165,6 +166,7 @@ def tkFun(tx, ts):
     #67~72四位数乘法
     67: fourDigitMul.foTwMul,#四位数与两位数相乘
     68: fourDigitMul.foThMul,#四位数乘以三位数
+    69: fourDigitMul.foFoMul,#四位数乘四位数
     #73~88:任意数与n乘法
     73: twoDigitMul.n9Mul,#任意数与9相乘
     74: twoDigitMul.n99Mul,#任意数与99相乘
