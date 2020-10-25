@@ -46,7 +46,7 @@ def foThMul(n):
   return tk
 
 #四位数乘四位数——four four mul
-def foFoM(n):
+def foFoMul(n):
   #参数n为题数也就是乘数与被乘数的个数
   dsL = []  #得数列表
   ystL = []  #运算题列表11*12
